@@ -18,7 +18,10 @@ deploy docker images:
   before_script:
     - docker login -u $DOCKER_REGISTRY_USER -p $DOCKER_REGISTRY_PASSWORD
   script:
+    - export TAG=$(date -u +"%FT%H-%M-%SUTC")
     - docker build -t smartive/semantic-release-image:latest .
+    - docker tag smartive/semantic-release-image:latest smartive/semantic-release-image:$TAG
     - docker push smartive/semantic-release-image:latest
+    - docker push smartive/semantic-release-image:$TAG
   only:
     - master
