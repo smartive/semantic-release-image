@@ -14,7 +14,7 @@ deploy docker images:
     DOCKER_HOST: tcp://localhost:2375
     DOCKER_BUILDKIT: '1'
   services:
-    - docker:dind
+    - docker:18.09-dind
   before_script:
     - docker login -u $DOCKER_REGISTRY_USER -p $DOCKER_REGISTRY_PASSWORD
   script:
