@@ -1,6 +1,6 @@
 FROM node:alpine
 
-RUN apk --update --no-cache add git openssh
+RUN apk --update --no-cache add git git-lfs openssh
 
 ENV PACKAGES="semantic-release \
   @semantic-release/gitlab \
