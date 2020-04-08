@@ -11,8 +11,12 @@ deploy docker images:
   image: docker:latest
   variables:
     DOCKER_DRIVER: overlay2
-    DOCKER_HOST: tcp://localhost:2375
+    DOCKER_HOST: tcp://docker:2375
+    DOCKER_FILE: ./Dockerfile
+    DOCKER_TAG: $CI_REGISTRY_IMAGE:latest
+    DOCKER_CONTEXT: '.'
     DOCKER_BUILDKIT: '1'
+    DOCKER_TLS_CERTDIR: ''
   services:
     - docker:18.09-dind
   before_script:
