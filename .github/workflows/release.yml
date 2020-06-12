@@ -24,7 +24,5 @@ jobs:
           export TAG=$(date -u +"%FT%H-%M-%SUTC")
           docker build -t smartive/semantic-release-image:latest .
           docker tag smartive/semantic-release-image:latest smartive/semantic-release-image:$TAG
-      - name: Push Images
-        run: |
           docker push smartive/semantic-release-image:latest
           docker push smartive/semantic-release-image:$TAG
