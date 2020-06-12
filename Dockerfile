@@ -1,17 +1,12 @@
-FROM node:alpine
+FROM node:14.4.0-alpine3.12
+
+ENV PATH="$PATH:/npm/node_modules/.bin"
 
 RUN apk --update --no-cache add git git-lfs openssh
 
-ENV PACKAGES="semantic-release \
-  @semantic-release/gitlab \
-  @semantic-release/git \
-  @semantic-release/changelog \
-  @semantic-release/exec \
-  @iteratec/semantic-release-bitbucket \
-  @iteratec/semantic-release-docker"
+COPY ./package.json ./package-lock.json /npm/
 
-RUN npm install -g ${PACKAGES} && \
-  npm cache clean --force && \
-  npm list -g --depth=0 > /versions.txt
+RUN cd /npm && \
+  npm ci
 
-CMD [ "npx", "semantic-release" ]
+CMD [ "semantic-release" ]
