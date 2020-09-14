@@ -1,4 +1,4 @@
-FROM node:14.10.0-alpine3.12
+FROM node:14.10.1-alpine3.12
 
 ENV PATH="$PATH:/npm/node_modules/.bin"
 
