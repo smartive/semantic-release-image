@@ -11,10 +11,7 @@ updates:
   ignore:
   - dependency-name: node
     versions:
-    - ">= 15.a, < 16"
-  - dependency-name: node
-    versions:
-    - 14.15.5.pre.alpine3.12
+    - ">= 15"
 - package-ecosystem: npm
   directory: "/"
   schedule:
@@ -24,8 +21,3 @@ updates:
   labels:
   - dependencies
   versioning-strategy: increase
-  ignore:
-  - dependency-name: semantic-release
-    versions:
-    - 17.4.0
-    - 17.4.1
