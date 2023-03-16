@@ -1,8 +1,6 @@
 # semantic-release-image
 
 ![Release Docker Image](https://github.com/smartive/semantic-release-image/workflows/Release%20Docker%20Image/badge.svg)
-![image size](https://img.shields.io/microbadger/image-size/smartive/semantic-release-image/latest.svg?style=flat)
-![layers](https://img.shields.io/microbadger/layers/smartive/semantic-release-image/latest.svg?style=flat)
 
 `docker pull smartive/semantic-release-image`
 
