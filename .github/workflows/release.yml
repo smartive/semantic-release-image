@@ -15,14 +15,14 @@ jobs:
       - name: Setup Docker
         shell: bash
         env:
-          DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
-          DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+          DOCKER_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
+          DOCKER_PASSWORD: ${{ secrets.DOCKERHUB_TOKEN }}
         run: docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
       - name: Build Images
         shell: bash
         run: |
           export TAG=$(date -u +"%FT%H-%M-%SUTC")
           docker build -t smartive/semantic-release-image:latest .
-          docker tag smartive/semantic-release-image:latest smartive/semantic-release-image:$TAG
-          docker push smartive/semantic-release-image:latest
-          docker push smartive/semantic-release-image:$TAG
+          docker tag kkaryl/semantic-release-image:latest kkaryl/semantic-release-image:$TAG
+          docker push kkaryl/semantic-release-image:latest
+          docker push kkaryl/semantic-release-image:$TAG

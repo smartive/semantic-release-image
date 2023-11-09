@@ -14,6 +14,7 @@ The following packages are installed globally:
 - `@semantic-release/git`
 - `@semantic-release/changelog`
 - `@semantic-release/exec`
+- `@aensley/semantic-release-openapi`
 
 You find the exact versions of the packages in the package.json file.
 
@@ -21,3 +22,7 @@ You find the exact versions of the packages in the package.json file.
 
 Since there is no "correct" way to combine all those different versions
 for a useful docker tag, a timestamp will be used for each build.
+
+### Add dependencies
+
+Add dependencies to package.json, then run `npm i --package-lock-only` to update package-lock.json.
